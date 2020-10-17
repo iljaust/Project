@@ -1,7 +1,7 @@
-package controller;
+package com.iljaust.project.controller;
 
-import model.Account;
-import repository.AccountRepository;
+import com.iljaust.project.model.Account;
+import com.iljaust.project.repository.AccountRepository;
 
 import java.util.List;
 

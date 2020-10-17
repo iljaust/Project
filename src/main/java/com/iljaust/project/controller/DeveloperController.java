@@ -1,7 +1,7 @@
-package controller;
+package com.iljaust.project.controller;
 
-import model.Developer;
-import repository.DeveloperRepository;
+import com.iljaust.project.model.Developer;
+import com.iljaust.project.repository.DeveloperRepository;
 
 import java.util.List;
 

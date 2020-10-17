@@ -1,7 +1,7 @@
-package controller;
+package com.iljaust.project.controller;
 
-import model.Skill;
-import repository.SkillRepository;
+import com.iljaust.project.model.Skill;
+import com.iljaust.project.repository.SkillRepository;
 
 import java.util.List;
 

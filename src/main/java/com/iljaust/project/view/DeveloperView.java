@@ -1,7 +1,7 @@
-package view;
+package com.iljaust.project.view;
 
-import controller.DeveloperController;
-import model.Developer;
+import com.iljaust.project.controller.DeveloperController;
+import com.iljaust.project.model.Developer;
 
 
 import java.util.List;

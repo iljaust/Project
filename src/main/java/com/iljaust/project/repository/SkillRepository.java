@@ -1,8 +1,8 @@
-package repository;
+package com.iljaust.project.repository;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import model.Skill;
+import com.iljaust.project.model.Skill;
 
 import java.io.File;
 import java.io.FileNotFoundException;

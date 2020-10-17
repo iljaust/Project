@@ -1,10 +1,10 @@
-package repository;
+package com.iljaust.project.repository;
 
-import serialization.*;
+import com.iljaust.project.serialization.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import model.*;
+import com.iljaust.project.model.*;
 
 
 import java.io.*;

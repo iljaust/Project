@@ -1,10 +1,10 @@
-package serialization;
+package com.iljaust.project.serialization;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
-import model.Developer;
+import com.iljaust.project.model.Developer;
 
 import java.lang.reflect.Type;
 

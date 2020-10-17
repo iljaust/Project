@@ -1,4 +1,4 @@
-package repository;
+package com.iljaust.project.repository;
 
 public interface GenericRepository <T,ID> {
     T getById(ID id);

@@ -1,4 +1,4 @@
-package model;
+package com.iljaust.project.model;
 
 public class Account {
     private Long id;

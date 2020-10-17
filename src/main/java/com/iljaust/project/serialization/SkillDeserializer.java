@@ -1,9 +1,9 @@
-package serialization;
+package com.iljaust.project.serialization;
 
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
-import model.Skill;
-import repository.SkillRepository;
+import com.iljaust.project.model.Skill;
+import com.iljaust.project.repository.SkillRepository;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

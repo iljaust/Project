@@ -1,9 +1,8 @@
-package view;
+package com.iljaust.project.view;
 
-import controller.AccountController;
-import model.Account;
-import model.AccountStatus;
-import model.Skill;
+import com.iljaust.project.controller.AccountController;
+import com.iljaust.project.model.Account;
+import com.iljaust.project.model.AccountStatus;
 
 import java.util.List;
 import java.util.Scanner;

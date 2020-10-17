@@ -1,9 +1,9 @@
-package serialization;
+package com.iljaust.project.serialization;
 
 import com.google.gson.*;
-import model.Account;
-import model.Developer;
-import model.Skill;
+import com.iljaust.project.model.Account;
+import com.iljaust.project.model.Developer;
+import com.iljaust.project.model.Skill;
 
 import java.lang.reflect.Type;
 

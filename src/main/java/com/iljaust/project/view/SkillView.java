@@ -1,7 +1,7 @@
-package view;
+package com.iljaust.project.view;
 
-import controller.SkillController;
-import model.Skill;
+import com.iljaust.project.controller.SkillController;
+import com.iljaust.project.model.Skill;
 
 import java.util.List;
 import java.util.Scanner;

@@ -1,9 +1,8 @@
-package repository;
+package com.iljaust.project.repository;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import model.Account;
-import model.Skill;
+import com.iljaust.project.model.Account;
 
 import java.io.*;
 import java.util.Collections;

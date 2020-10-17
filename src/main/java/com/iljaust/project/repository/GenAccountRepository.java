@@ -1,6 +1,6 @@
-package repository;
+package com.iljaust.project.repository;
 
-import model.Account;
+import com.iljaust.project.model.Account;
 
 public interface GenAccountRepository extends GenericRepository<Account,Long>{
 }
