@@ -2,87 +2,88 @@ package repository;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
 import model.Skill;
 
-import java.io.*;
-import java.lang.reflect.Type;
-import java.net.URISyntaxException;
-import java.util.Arrays;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SkillRepository implements GenSkillRepository{
+public class SkillRepository implements GenSkillRepository {
+    private final String SKILLS_FILE_PATH = "./src/main/resources/skills.json";
     private final Gson gson = new Gson();
-    private File SkillFile;
-    private FileReader reader;
+    private final File skillFile;
 
 
+    public SkillRepository() {
+        this.skillFile = new File(SKILLS_FILE_PATH);
+    }
 
     private List<Skill> fromFileToArray() {
         try {
-            SkillFile = new File(Thread.currentThread().getContextClassLoader().getResource("skills.json").toURI());
-            reader = new FileReader(SkillFile);
-
-        } catch (URISyntaxException | FileNotFoundException e) {
+            FileReader reader = new FileReader(skillFile);
+            return gson.fromJson(reader, new TypeToken<List<Skill>>() {
+            }.getType());
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
+            return Collections.emptyList();
         }
-
-        List<Skill> skills = gson.fromJson(reader, new TypeToken<List<Skill>>() {}.getType());
-
-        return skills;
-
     }
 
-    private void fromArrayToFile(List<Skill> skills){
-        try {
-            SkillFile = new File(Thread.currentThread().getContextClassLoader().getResource("skills.json").toURI());
-            gson.toJson(skills, new FileWriter(SkillFile));
-        } catch (IOException | URISyntaxException e) {
+    private void fromArrayToFile(List<Skill> skills) {
+        try (Writer writer = new FileWriter(SKILLS_FILE_PATH)) {
+            gson.toJson(skills, writer);
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public Skill save(Skill skill){
+    public Skill save(Skill skill) {
         List<Skill> skills = fromFileToArray();
-        skills.add(skill);
+        skills.add(skill)
+        ;
         fromArrayToFile(skills);
         return skill;
     }
 
-    public void deleteById(Long id){
+    public void deleteById(Long id) {
         List<Skill> skills = fromFileToArray();
         skills.stream()
-                .filter(e -> e.getId()!= id)
+                .filter(e -> e.getId() != id)
                 .collect(Collectors.toList());
         fromArrayToFile(skills);
     }
 
-    public Skill update(Skill skill){
+    public Skill update(Skill skill) {
         List<Skill> skills = fromFileToArray();
-        skills.removeIf(n ->n.getId() == skill.getId());
-        skills.add(skill);
+        skills.removeIf(n -> n.getId() == skill.getId());
+        skills.add(skill)
+        ;
         fromArrayToFile(skills);
         return skill;
     }
 
     public Skill getById(Long id) {
-        List <Skill> skill = fromFileToArray();
+        List<Skill> skill = fromFileToArray();
         return skill.stream().filter(s -> s.getId() == id).findFirst().orElse(null);
     }
 
-    public List<Skill> getAll(){
+    public List<Skill> getAll() {
         return fromFileToArray();
     }
 
-    public long generateID(){
+    public long generateID() {
         List<Skill> skills = fromFileToArray();
-
-        if(skills == null) return 1;
-
-        Skill highestID = skills.stream().max(Comparator.comparingLong(Skill::getId)).get();
-        return highestID.getId() + 1;
+        if (skills == null) {
+            return 1;
+        }
+        return skills.stream().max(Comparator.comparingLong(Skill::getId)).orElse(new Skill()).getId();
     }
 
 }
