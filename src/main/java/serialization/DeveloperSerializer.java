@@ -1,4 +1,4 @@
-package Serialization;
+package serialization;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;

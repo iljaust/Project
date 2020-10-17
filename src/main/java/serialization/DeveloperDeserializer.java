@@ -1,4 +1,4 @@
-package Serialization;
+package serialization;
 
 import com.google.gson.*;
 import model.Account;
