@@ -4,6 +4,7 @@ import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import com.iljaust.project.model.Skill;
 import com.iljaust.project.repository.SkillRepository;
+import com.iljaust.project.repository.json.JsonSkillRepositoryImpl;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import java.util.List;
 public class SkillDeserializer implements JsonDeserializer<List<Skill>> {
     @Override
     public List<Skill> deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
-        SkillRepository repository = new SkillRepository();
+        SkillRepository repository = new JsonSkillRepositoryImpl();
         List<Skill> skillList = repository.getAll();
 
         Gson gson = new Gson();

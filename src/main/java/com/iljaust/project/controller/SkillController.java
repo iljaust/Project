@@ -2,11 +2,12 @@ package com.iljaust.project.controller;
 
 import com.iljaust.project.model.Skill;
 import com.iljaust.project.repository.SkillRepository;
+import com.iljaust.project.repository.json.JsonSkillRepositoryImpl;
 
 import java.util.List;
 
 public class SkillController {
-    private SkillRepository repository = new SkillRepository();
+    private SkillRepository repository =new JsonSkillRepositoryImpl();
 
     public void deleteById(long id){
         repository.deleteById(id);

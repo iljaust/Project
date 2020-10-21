@@ -37,8 +37,6 @@ public class DeveloperView {
     public void getAll(){
         List<Developer> developers = controller.getAll();
 
-        for(Developer developer : developers){
-            System.out.println(developer);
-        }
+        developers.forEach(System.out::println);
     }
 }

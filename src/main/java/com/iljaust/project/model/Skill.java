@@ -1,11 +1,7 @@
 package com.iljaust.project.model;
 
-import com.google.gson.annotations.SerializedName;
-
 public class Skill {
-    @SerializedName("id")
     private long id;
-    @SerializedName("name")
     private String name;
 
     public Skill(long id, String name) {

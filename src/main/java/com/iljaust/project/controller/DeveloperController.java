@@ -2,11 +2,12 @@ package com.iljaust.project.controller;
 
 import com.iljaust.project.model.Developer;
 import com.iljaust.project.repository.DeveloperRepository;
+import com.iljaust.project.repository.json.JsonDeveloperRepositoryImpl;
 
 import java.util.List;
 
 public class DeveloperController {
-    DeveloperRepository repository = new DeveloperRepository();
+    DeveloperRepository repository = new JsonDeveloperRepositoryImpl();
 
     public void deleteById(long id){
         repository.deleteById(id);

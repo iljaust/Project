@@ -36,8 +36,7 @@ public class SkillView {
     public void getAll(){
         List<Skill> skills = controller.getAll();
 
-        for(Skill skill : skills){
-            System.out.println(skill);
-        }
+        skills.forEach(System.out::println);
+
     }
 }

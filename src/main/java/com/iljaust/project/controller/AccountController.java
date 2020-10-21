@@ -2,11 +2,12 @@ package com.iljaust.project.controller;
 
 import com.iljaust.project.model.Account;
 import com.iljaust.project.repository.AccountRepository;
+import com.iljaust.project.repository.json.JsonAccountRepositoryImpl;
 
 import java.util.List;
 
 public class AccountController {
-    AccountRepository accountRepository = new AccountRepository();
+    AccountRepository accountRepository = new JsonAccountRepositoryImpl();
 
     public List<Account> getAll(){
         return accountRepository.getAll();

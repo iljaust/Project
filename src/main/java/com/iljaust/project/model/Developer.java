@@ -8,6 +8,7 @@ public class Developer {
     private List<Skill> skillSet;
     private Account accountStatus;
 
+
     public Developer(DeveloperBuilder builder){
         this.name = builder.name;
         this.id = builder.id;
@@ -18,6 +19,8 @@ public class Developer {
     public long getId() {
         return id;
     }
+
+    public void setId(Long id){ this.id = id;}
 
     public String getName() {
         return name;

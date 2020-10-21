@@ -54,8 +54,6 @@ public class AccountView {
     public void getAll(){
         List<Account> accounts = controller.getAll();
 
-        for(Account account : accounts){
-            System.out.println(account);
-        }
+        accounts.forEach(System.out::println);
     }
 }
